@@ -1,6 +1,5 @@
-package it.manuelhartmann.quiz;
+package it.manuelhartmann.quiz.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 public class HOMEController {

@@ -1,0 +1,34 @@
+
+services:
+  mysql-quiz:
+    image: mysql:8.0
+    container_name: quiz-mysql-intelij
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: quiz_app
+      MYSQL_USER: quiz_user
+      MYSQL_PASSWORD: quiz_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: quiz-phpmyadmin
+    environment:
+      PMA_HOST: mysql-quiz
+      PMA_USER: quiz_user
+      PMA_PASSWORD: quiz_pass
+    ports:
+      - "8081:80"
+    depends_on:
+      - mysql-quiz
+
+
+
+volumes:
+  mysql_data:
+
+
