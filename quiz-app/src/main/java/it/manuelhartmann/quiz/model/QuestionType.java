@@ -8,15 +8,14 @@ public enum QuestionType {
     private final String displayName;
 
     QuestionType(String displayName) {
+
         this.displayName = displayName;
     }
 
-    public String getDisplayName(){
+    public String getDisplayName()
+    {
         return displayName;
     }
 
-    //public String setDisplayName(String displayName){
-      //  return this.displayName = displayName;
-   // }
 
 }
